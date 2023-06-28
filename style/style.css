@@ -17,7 +17,6 @@ html, body {
 body {
     color: var(--pink-light);
     font-family: 'Josefin Sans', sans-serif;
-    overflow: scroll;
 }
 
 img {
@@ -46,10 +45,11 @@ li {
 .home {
     display: grid;
     background-color: var(--purple-dark);
+    min-height: 100vh;
 }
 
 .left-start { 
-    padding: 2em;
+    padding: 2em;  
 }
 .fountain-pen--static {
     margin-bottom: 1em
@@ -82,12 +82,13 @@ li {
     top: 0;
     right: 0;
     left: 0;
-    padding: .5em 1em;
+    padding: .3em 1em;
     z-index: 2;
     display: grid;
     align-items: center;
     text-align: center;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    transition: .5s;
 }
 
 .header {
@@ -95,11 +96,7 @@ li {
     width: 100%;
 }
 .SVG_container--header {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 5em;
-    animation: var(--slide-animation-1);
-    -webkit-animation: var(--slide-animation-1);
+    display: none;
 }
 
 .header svg {   
@@ -108,19 +105,16 @@ li {
 
  }
  .header h1 {
-    animation: var(--slide-animation-2);
-    -webkit-animation: var(--slide-animation-2);
+    animation: var(--slide-animation-1);
+    -webkit-animation: var(--slide-animation-1);
  }
  .fountain-pen--header {
-    width: 80%;
-    animation: var(--slide-animation-3);
-    -webkit-animation: var(--slide-animation-3);
+    animation: var(--slide-animation-2);
+    -webkit-animation: var(--slide-animation-2);
  }
 
  /* sections */
  .section-content {
-    position: sticky;
-    top: 0;
     min-height: 100vh;
  }
  .section-inner {
@@ -155,15 +149,40 @@ li {
     padding: .3em;
     scroll-snap-align: center;
 }
+.projects a {
+    color: inherit;
+}
 
 #contact {
     background-color: var(--backround-main);
+    color: var(--blue-dark)
+}
+.inner-contact h3 {
+    margin-top: 0;
+}
+footer {
+    background-color: var(--purple-dark);
+    color: var(--backround-main);
+}
+footer p {
+    margin: 0;
+    padding: .3em
 }
 
 
 @media (min-width: 768px) {
     .home{
         grid-template-columns: repeat(2, 50%);
+    }
+    .SVG_container--header {
+        display: flex;
+        justify-content: flex-end;
+        gap: 3em;
+        animation: var(--slide-animation-1);
+        -webkit-animation: var(--slide-animation-1);
+    }
+    .fountain-pen--header {
+        width: 60%;
     }
     .section-inner {
         padding: 8em 2em 0;
@@ -186,6 +205,7 @@ li {
         display: none;
      }
      .inner-contact {
-        padding-top: 11em;
+        padding-top: 8em;
+
      }
 }
