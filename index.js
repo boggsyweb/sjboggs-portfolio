@@ -4,6 +4,8 @@ window.addEventListener('scroll', function() {
   const header = document.querySelectorAll('.header');
   const sectionContent = document.querySelector('.section-content');
   const sections = document.querySelectorAll('section');
+  const desktopNav = document.getElementById('desktop-nav')
+  const menuToggle = document.getElementById('menuToggle')
 
   const headerHeight = header[0].offsetHeight; 
 
@@ -16,6 +18,7 @@ window.addEventListener('scroll', function() {
       const backgroundColor = getComputedStyle(currentSection).backgroundColor;
       header.style.backgroundColor = backgroundColor;
 
+
       const textColor = getContrastColor(backgroundColor);
       header.style.color = textColor;
 
@@ -23,6 +26,18 @@ window.addEventListener('scroll', function() {
       svgs.forEach(function(svg) {
         svg.style.fill = textColor;
       });
+      desktopNav.style.color = textColor;
+      
+      const navLinks = desktopNav.querySelectorAll('a');
+      navLinks.forEach(function(link) {
+        link.style.color = textColor;
+      });
+
+      const Hamburger = menuToggle.querySelectorAll('span');
+      Hamburger.forEach(function(span) {
+        span.style.background = textColor;
+      })
+
     } else {
       header.classList.remove('visible');
       header.style.backgroundColor = '';
@@ -32,6 +47,16 @@ window.addEventListener('scroll', function() {
       svgs.forEach(function(svg) {
         svg.style.fill = '';
       });
+      desktopNav.style.color = '';
+      
+      const navLinks = desktopNav.querySelectorAll('a');
+      navLinks.forEach(function(link) {
+        link.style.color = '';
+      });
+      const Hamburger = menuToggle.querySelectorAll('span');
+      Hamburger.forEach(function(span) {
+        span.style.background = '';
+      })
     }
   });
 });
@@ -51,13 +76,11 @@ function getCurrentSection(sections, headerHeight) {
 
 function getContrastColor(backgroundColor) {
  
-  const threshold = 200; 
+  const threshold = 150; 
   const rgb = backgroundColor.match(/\d+/g); 
   const brightness = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000; 
   return brightness > threshold ? '#232A79' : '#FDF3F6'; 
 }
-
-
 
 
 const projectWrapper = document.querySelector('.project-wrapper')
@@ -78,6 +101,8 @@ function displayProjects() {
 projectWrapper.innerHTML = projectDisplay
 }
 displayProjects()
+
+
 
 // **automatically updates year in footer (based on user's computer)**
 let date = (new Date()).getFullYear()

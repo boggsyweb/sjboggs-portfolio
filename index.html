@@ -8,14 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/animation.css">
+    <link rel="stylesheet" href="./style/mobile-nav.css">
     <title>SJBoggs</title>
 </head>
 <body>
-    <div class="home">
+    <div class="home" id="home">
 
         <!-- displays left side only in vw > 768px -->
         <div class="left-start">
-            <img class="fountain-pen fountain-pen--static" src="./images/fountainhorizontal.png" alt="illustration of a fountain pen">
+            <img class="fountain-pen fountain-pen--static" src="./images/fountainhorizontal.webp" alt="illustration of a fountain pen">
             <div class="home-hello">
                 <h2>Hello, my name is</h2>
                   <h1>Stephanie Boggs</h1>
@@ -23,7 +24,7 @@
             </div>
             <div class="SVG_container">             
                 <span class="header-links">
-                    <a href="mailto:stephaniejboggsweb@gmail.com">
+                    <a href="mailto:sjboggsdev@gmail.com">
                     <svg class="contact-svg2" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M7.61173 10.525L4.65081 9.53802C1.55029 8.50451 0 7.98776 0 7.03804C0 6.08838 1.55028 5.57163 4.65083 4.53812L15.8676 0.799185C18.0492 0.0719728 19.1401 -0.291627 19.7158 0.284182C20.2916 0.859978 19.928 1.9508 19.2008 4.13244L15.4619 15.3492C14.4284 18.4497 13.9117 20 12.9619 20C12.0124 20 11.4956 18.4497 10.462 15.3492L9.47511 12.3883L15.2112 6.65214C15.7257 6.1376 15.7257 5.30334 15.2112 4.7888C14.6967 4.27425 13.8624 4.27425 13.3479 4.7888L7.61173 10.525Z" fill=""/>
                     </svg>                          
@@ -48,11 +49,40 @@
             </div>  
 
                <!--animates to top on scroll  -->
-            <div class="header">
-                <img class="fountain-pen fountain-pen--header" src="./images/fountainhorizontal.png" alt="illustration of a fountain pen">
+            <header class="header">
+
+                <div class="mobile-header">
+                    <nav role="navigation">
+                        <div id="menuToggle">
+                        
+                        <input type="checkbox" id="nav-toggle"/>
+                        
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        
+                        <ul id="mobile-menu">
+                            <a href="#home"><li>Home</li></a>
+                            <a href="#about"><li>About</li></a>
+                            <a href="#projects"><li>Projects</li></a>
+                            <a href="#contact"><li>Contact</li></a>
+                        </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="desktop-header">
+                <a href="#home"><img class="fountain-pen fountain-pen--header" src="./images/fountainhorizontal.png" alt="illustration of a fountain pen"></a>
+                <nav>
+                <ul id="desktop-nav">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </ul>
+                </nav>
                 <div class="SVG_container--header">             
                     <span class="header-links">
-                        <a href="mailto:stephaniejboggsweb@gmail.com">
+                        <a href="mailto:sjboggsdev@gmail.com">
                         <svg class="contact-svg2" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.61173 10.525L4.65081 9.53802C1.55029 8.50451 0 7.98776 0 7.03804C0 6.08838 1.55028 5.57163 4.65083 4.53812L15.8676 0.799185C18.0492 0.0719728 19.1401 -0.291627 19.7158 0.284182C20.2916 0.859978 19.928 1.9508 19.2008 4.13244L15.4619 15.3492C14.4284 18.4497 13.9117 20 12.9619 20C12.0124 20 11.4956 18.4497 10.462 15.3492L9.47511 12.3883L15.2112 6.65214C15.7257 6.1376 15.7257 5.30334 15.2112 4.7888C14.6967 4.27425 13.8624 4.27425 13.3479 4.7888L7.61173 10.525Z" fill=""/>
                         </svg>                          
@@ -75,12 +105,13 @@
                                
                     </span>          
                 </div> 
-            </div>  
+            </div>
+            </header>  
     </div>
 
     <!-- displays on right side only in vw > 768px -->
     <div class="right-start">
-        <img src="./images/profile_w_spideyoverlay.jpg" alt="">
+        <img src="./images/profile_w_spideyoverlay.webp" alt="profile picture of Stephanie Boggs">
     </div>
 </div>
 
@@ -108,19 +139,19 @@
             <h3>What I work with</h3>
                 <h4>Code</h4>
                     <span>
-                        <img src="./images/logos/js.png" alt="javascript logo">
-                        <img src="./images/logos/react.png" alt="react logo">
-                        <img src="./images/logos/ts.png" alt="typescript logo">
-                        <img src="./images/logos/css.png" alt="CSS logo">
-                        <img src="./images/logos/html.png" alt="html logo">
+                        <img src="./images/logos/js.webp" alt="javascript logo">
+                        <img src="./images/logos/react.webp" alt="react logo">
+                        <img src="./images/logos/ts.webp" alt="typescript logo">
+                        <img src="./images/logos/css.webp" alt="CSS logo">
+                        <img src="./images/logos/html.webp" alt="html logo">
                     </span>
                 <h4>Design</h4>
                     <span>
-                        <img src="./images/logos/ps.png" alt="photoshop logo">
-                        <img src="./images/logos/illustrator.png" alt="illustrator">
-                        <img src="./images/logos/figma.png" alt="figma logo">
-                        <img src="./images/logos/gimp.png" alt="gimp logo">
-                        <img src="./images/logos/inkscape.png" alt="inkscape logo">
+                        <img src="./images/logos/ps.webp" alt="photoshop logo">
+                        <img src="./images/logos/illustrator.webp" alt="illustrator logo">
+                        <img src="./images/logos/figma.webp" alt="figma logo">
+                        <img src="./images/logos/gimp.webp" alt="gimp logo">
+                        <img src="./images/logos/inkscape.webp" alt="inkscape logo">
                     </span>
         </div>
     </div>
@@ -139,11 +170,11 @@
 
             <h2 class="section-title">Contact</h2>
             <h4><em>Email me at:</em></h4>
-            <h3>sjboggsdev@gmail.com</h3>
+            <a href="mailto:sjboggsdev@gmail.com"><h3>sjboggsdev@gmail.com</h3></a>
     </div>
 </section>
 <footer>
-    <p>Stephanie Boggs <span id="year"></span> </p>
+    <p>Stephanie Boggs &copy<span id="year"></span> </p>
 </footer>
 <script src="index.js" type="module"></script>
 </body>
