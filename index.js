@@ -92,7 +92,7 @@ function displayProjects() {
     <div class='projects'>
     <h3 class='project-title'>${project.name}</h3>
     <!--<h5 class='project-tech'>${project.tech}</h5>-->
-    <img class='project-img' src='${project.image}'>
+    <img class='project-img' src='${project.image}' alt='${project.alt}'>
     <p class='project-description'>${project.description}</p>
     <h4 class='project-links'>${project.links}</h4>
     </div>`
