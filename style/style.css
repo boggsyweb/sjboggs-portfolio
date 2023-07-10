@@ -173,6 +173,9 @@ li {
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
 }
+.project-description {
+    line-height: 1.1;
+}
 
 .projects {
     width: 100%;
@@ -213,7 +216,7 @@ footer p {
     .home{
         grid-template-columns: repeat(2, 50%);
     }
-    .mobile-header {
+    #mobile-menu {
         display: none;
     }
     .header {
@@ -281,7 +284,6 @@ footer p {
         grid-area: 1/2/1/2;
         align-self: center;
         text-align: justify;
-        line-height: 1.1;
     }
 
     .project-title {

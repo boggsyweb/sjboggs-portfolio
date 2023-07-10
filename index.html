@@ -51,25 +51,25 @@
                <!--animates to top on scroll  -->
             <header class="header">
 
-                <div class="mobile-header">
-                    <nav role="navigation">
-                        <div id="menuToggle">
-                        
-                        <input type="checkbox" id="nav-toggle"/>
-                        
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        
-                        <ul id="mobile-menu">
-                           <li><a href="#home">Home</a></li> 
-                           <li><a href="#about">About</a></li> 
-                            <li><a href="#projects">Projects</a></li>
-                           <li><a href="#contact">Contact</a></li> 
-                        </ul>
-                        </div>
-                    </nav>
-                </div>
+                <!-- mobile only -->
+
+                <div id="mobile-menu">
+                    <div id="burger-bar" class="mobile-toggle">
+                      <div id="bar1" class="bar"></div>
+                      <div id="bar2" class="bar"></div>
+                      <div id="bar3" class="bar"></div>
+                    </div>
+                    <nav class="nav" id="mobile-nav">
+                      <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                      </ul>
+                    </nav> 
+                  </div>
+
+                  <!-- desktop only -->
 
                 <div class="desktop-header">
                 <a href="#home"><img class="fountain-pen fountain-pen--header" src="./images/fountainhorizontal.webp" alt="illustration of a fountain pen"></a>
