@@ -5,7 +5,7 @@ export const projects = [
     tech: 'React TS',
     image: './images/projects/boolebots.webp',
     alt: 'screenshots of Boolebots in desktop and mobile views',
-    description: 'This project was part of <a href="https://www.chingu.io/" target="_blank" >Chingu</a> voyage 44 and was my first time working with a team. Collaborating with a group with vastly different communication styles and skillsets was equal parts challenging and fun. We utilized Agile methodology to structure the workflow. For my part, I designed the overall theme with Figma, did most of the CSS, and wrote the code for some key elements, such as the modals, the loader, and a color-coding feature. I also collaborated with team members for other parts of the project.',
+    description: 'This project was part of <a href="https://www.chingu.io/" target="_blank" >Chingu</a> voyage 44. We had six weeks to deploy and submit a completed project, while adhering to an explicit set of requirements. This was my first time working with a team. The experience of collaborating with a group with vastly different communication styles and skillsets was equal parts challenging and fun. We utilized Agile methodology to structure the workflow, which helped it run smoothly.',
     links: '<a href="https://github.com/boggsyweb/v44-tier2-team-27" target="_blank">Code /</a> <a href="https://gentle-semifreddo-84c257.netlify.app/" target="blank">Live-View</a>'
 },
 {

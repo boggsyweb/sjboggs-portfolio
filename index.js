@@ -117,19 +117,40 @@ function getContrastColor(backgroundColor) {
 // projects 
 const projectWrapper = document.querySelector('.project-wrapper')
 
+
 const projectDisplay = projects.map((project) => `
-  <div class='projects'>
+  <div class='project-each'>
     <h3 class='project-title'>${project.name}</h3>
     <!--<h5 class='project-tech'>${project.tech}</h5>-->
     <img class='project-img' src='${project.image}' alt='${project.alt}'>
     <p class='project-description'>${project.description}</p>
     <h4 class='project-links'>${project.links}</h4>
+    
   </div>
 `).join('');
 
 projectWrapper.innerHTML = projectDisplay;
 
+const projectEach = document.querySelector(".project-each");
+const prevButton = document.querySelector(".prev-button");
+const nextButton = document.querySelector(".next-button");
+const projectWidth = projectEach.clientWidth;
 
+nextButton.addEventListener("click", () => {
+  projectWrapper.scrollLeft += projectWidth;
+  
+  if (projectWrapper.scrollLeft + projectWrapper.clientWidth >= projectWrapper.scrollWidth) {
+    projectWrapper.scrollLeft = 0;
+  }
+});
+
+prevButton.addEventListener("click", () => {
+  projectWrapper.scrollLeft -= projectWidth;
+  
+  if (projectWrapper.scrollLeft <= 0) {
+    projectWrapper.scrollLeft = projectWrapper.scrollWidth - projectWrapper.clientWidth;
+  }
+});
 
 
 // automatically updates year in footer (based on user's computer)
