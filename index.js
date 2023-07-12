@@ -1,7 +1,6 @@
 import { projects } from "./data.js"
 
 // mobile nav button open/close
-
 const mobileToggle = document.querySelector('.mobile-toggle');
 const mobileNav = document.getElementById('mobile-nav');
 
@@ -11,7 +10,7 @@ const mobileNav = document.getElementById('mobile-nav');
   document.body.classList.toggle('no-scroll');
 
 });
-
+// closes mobile nav when link is clicked
 const links = document.querySelectorAll('.nav li a');
 links.forEach((link) => {
   link.addEventListener('click', () => {
@@ -22,13 +21,38 @@ links.forEach((link) => {
   });
 });
 
+// sets colors to change on scroll
+function setElementStyles(element, backgroundColor, textColor) {
+  element.style.backgroundColor = backgroundColor;
+  element.style.color = textColor;
+}
+
+function setSVGStyles(svgs, textColor) {
+  svgs.forEach((svg) => {
+    svg.style.fill = textColor;
+  });
+}
+
+function setNavStyles(nav, textColor) {
+  const links = nav.querySelectorAll('a');
+  links.forEach((link) => {
+    link.style.color = textColor;
+  });
+}
+
+function setHamburgerStyles(hamburger, backgroundColor) {
+  hamburger.forEach((span) => {
+    span.style.background = backgroundColor;
+  });
+}
+// header visible after home screen 
 window.addEventListener('scroll', () => {
   const headerElements = document.querySelectorAll('.header');
   const sectionContent = document.querySelector('.section-content');
   const sections = document.querySelectorAll('section');
   const desktopNav = document.getElementById('desktop-nav');
-  const burgerBar = document.getElementById('burger-bar')
-
+  const mobileNav = document.getElementById('mobile-nav');
+  const burgerBar = document.getElementById('burger-bar');
 
   const headerHeight = headerElements[0].offsetHeight;
   const scrollThreshold = sectionContent.offsetTop - headerHeight;
@@ -38,58 +62,33 @@ window.addEventListener('scroll', () => {
       header.classList.add('visible');
       const currentSection = getCurrentSection(sections, headerHeight);
       const backgroundColor = getComputedStyle(currentSection).backgroundColor;
-      header.style.backgroundColor = backgroundColor;
-
       const textColor = getContrastColor(backgroundColor);
-      header.style.color = textColor;
 
-      mobileNav.style.backgroundColor = backgroundColor;
+      setElementStyles(header, backgroundColor, textColor);
+      setElementStyles(mobileNav, backgroundColor, textColor);
 
       const svgs = header.querySelectorAll('svg');
-      svgs.forEach((svg) => {
-        svg.style.fill = textColor;
-      });
+      setSVGStyles(svgs, textColor);
 
-      desktopNav.style.color = textColor;
-
-      const navLinks = desktopNav.querySelectorAll('a');
-      navLinks.forEach((link) => {
-        link.style.color = textColor;
-      });
-
-      const mobileLinks = mobileNav.querySelectorAll('a');
-      mobileLinks.forEach((link) => {
-        link.style.color = textColor;
-      });
-
-      const hamburger = burgerBar.querySelectorAll('.bar');
-      hamburger.forEach((span) => {
-        span.style.background = textColor;
-      });
+      setElementStyles(desktopNav, '', textColor);
+      setNavStyles(desktopNav, textColor);
+      setNavStyles(mobileNav, textColor);
+      setHamburgerStyles(burgerBar.querySelectorAll('.bar'), textColor);
     } else {
       header.classList.remove('visible');
-      header.style.backgroundColor = '';
-      header.style.color = '';
+      setElementStyles(header, '', '');
 
       const svgs = header.querySelectorAll('svg');
-      svgs.forEach((svg) => {
-        svg.style.fill = '';
-      });
+      setSVGStyles(svgs, '');
 
-      desktopNav.style.color = '';
-
-      const navLinks = desktopNav.querySelectorAll('a');
-      navLinks.forEach((link) => {
-        link.style.color = '';
-      });
-
-      const hamburger = burgerBar.querySelectorAll('.bar');
-      hamburger.forEach((span) => {
-        span.style.background = '';
-      });
+      setElementStyles(desktopNav, '', '');
+      setNavStyles(desktopNav, '');
+      setNavStyles(mobileNav, '');
+      setHamburgerStyles(burgerBar.querySelectorAll('.bar'), '');
     }
   });
 });
+
 
 
 function getCurrentSection(sections, headerHeight) {
@@ -105,7 +104,7 @@ function getCurrentSection(sections, headerHeight) {
   return currentSection;
 }
 
-// text and SVG colors related to backgrond colors
+// text and SVG color contrast related to backgrond colors
 function getContrastColor(backgroundColor) {
  
   const threshold = 150; 
@@ -131,6 +130,7 @@ const projectDisplay = projects.map((project) => `
 
 projectWrapper.innerHTML = projectDisplay;
 
+// projects carousel
 const projectEach = document.querySelector(".project-each");
 const prevButton = document.querySelector(".prev-button");
 const nextButton = document.querySelector(".next-button");
