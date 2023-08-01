@@ -16,7 +16,7 @@ I wanted to create a simple website without a ton of bells and whistles, but was
 
 ## Previews
 
-![App Screenshot](https://i.imgur.com/u7MjLwg.png)
+![App Screenshot](https://i.imgur.com/IKfBoHa.png) (https://i.imgur.com/hcoxdc5.png)
 
 
 ## Tech Stack
