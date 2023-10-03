@@ -59,7 +59,7 @@ a {
     color: inherit;
     cursor: pointer;
 }
-a:focus, 
+a:focus-visible, 
 button:focus,
 label:focus {
     outline: none;
@@ -146,7 +146,7 @@ nav a {
     transition: var(--transition-1);
 }
 nav a:hover, 
-nav a:focus {
+nav a:focus-visible {
     box-shadow: var(--shadow);
      background-color: var(--pink);
     color: #EFF2F3;
@@ -195,15 +195,15 @@ input:checked + #theme-label:after {
 	width: 1.8em;
 }
 #theme-label:hover:after,
-#theme-label:focus:after{
+#theme-label:focus-visible:after{
    background-color: var(--pink);
 }
 
 input:checked + #theme-label:hover:after,
-input:checked + #theme-label:focus:after {
+input:checked + #theme-label:focus-visible:after {
     background-color: var(--pink);
 }
-#theme-label:focus, 
+#theme-label:focus-visible, 
 #theme-label:hover {
     box-shadow: var(--shadow);
 }
@@ -375,9 +375,9 @@ font-size: 2.1rem;
 }
 
 .project-links a:hover,
-.project-links a:focus,
+.project-links a:focus-visible,
 .design-link a:hover, 
-.design-link a:focus {
+.design-link a:focus-visible {
     color: #F4F6F6;
     background-color: var(--pink);
     transform: translate(0,0);
@@ -488,7 +488,7 @@ button {
     cursor: pointer;
 }
 button:hover,
-button:focus {
+button:focus-visible {
     color: #F4F6F6;
     background-color: var(--pink);
     transform: translate(0,0);
@@ -513,7 +513,7 @@ button svg {
     transition: var(--transition-2);
 }
 
-#name:focus, #email:focus, #contact-msg:focus {
+#name:focus-visible, #email:focus-visible, #contact-msg:focus-visible {
     outline: var(--pink) 1px solid;     
 }
 #contact h3 {
@@ -541,15 +541,15 @@ footer {
     align-items: center;
     font-size: .8rem;
 }
-.footer-links a:focus path,
+.footer-links a:focus-visible path,
 .footer-links a:hover path,
-.footer-links a:focus,
+.footer-links a:focus-visible,
 .footer-links a:hover {
     fill: var(--pink);
     color: var(--pink);
 
 }   
-.footer-links a:focus,
+.footer-links a:focus-visible,
 .footer-links a:hover  {
     filter: drop-shadow(-3px 3px #6580a9ab);
     -webkit-filter: drop-shadow(-3px 3px #6580a9ab);
