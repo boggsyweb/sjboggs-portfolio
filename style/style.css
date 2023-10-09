@@ -290,7 +290,7 @@ main {
     }
     @media (min-width: 1440px) {
         .projects-wrapper {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat( auto-fit, minmax(18em, 1fr));
             gap: 2em;
             width: 100%;
         }
